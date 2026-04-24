@@ -28,6 +28,7 @@
 			name="viewport"
 			content="width=device-width, initial-scale=1, viewport-fit=cover"
 		/>
+		<link rel="canonical" href="https://vltspecialisten.se/" />
 
 		<!-- Open Graph / Social Media -->
 		<meta property="og:type" content="website" />
@@ -68,9 +69,9 @@
 			},
 			{
 			  "@type": "OpeningHoursSpecification",
-			  "dayOfWeek": "Saturday",
-			  "opens": "10:00",
-			  "closes": "17:00"
+			  "dayOfWeek": ["Saturday", "Sunday"],
+			  "opens": "11:00",
+			  "closes": "18:00"
 			}
 		  ],
 		  "hasOfferCatalog": {
@@ -97,10 +98,13 @@
 		<link rel="manifest" href="site.webmanifest" />
 		<link rel="apple-touch-icon" href="icon.png" />
 		
-		<!-- Fonts -->
+		<!-- Fonts & Performance -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+		</noscript>
 		
 		<link
 			rel="stylesheet"
@@ -213,7 +217,7 @@
 						<!-- Skoservice -->
 						<div class="service-card reveal">
 							<div class="service-image">
-								<img src="assets/img/skoservice.jpg" alt="Professionell skoservice och klackning av skor i Upplands Väsby" loading="lazy">
+								<img src="assets/img/skoservice.jpg" width="400" height="300" alt="Professionell skoservice och klackning av skor i Upplands Väsby" loading="lazy">
 							</div>
 							<div class="service-info">
 								<h3>Skoservice & Klackning</h3>
@@ -227,13 +231,13 @@
 								<p>Behöver du en skräddare i Väsby? Vi erbjuder professionellt skrädderi för alla typer av plagg. Vi utför uppläggning av byxor och jeans, byte av blixtlås i jackor och klänningar, samt lagning av revor och hål. Oavsett om det gäller en fin kostym eller din favorittröja ser vi till att passformen blir perfekt. Vi arbetar med alla material, från finaste siden till kraftigt läder.</p>
 							</div>
 							<div class="service-image">
-								<img src="assets/img/skradderi.jpg" alt="Skrädderi och klädvård i Väsby Centrum för boende i Märsta och Sollentuna" loading="lazy">
+								<img src="assets/img/skradderi.jpg" width="400" height="300" alt="Skrädderi och klädvård i Väsby Centrum för boende i Märsta och Sollentuna" loading="lazy">
 							</div>
 						</div>
 						<!-- Nycklar -->
 						<div class="service-card reveal">
 							<div class="service-image">
-								<img src="assets/img/kopiering.jpg" alt="Nyckelkopiering och bilnycklar i Upplands Väsby" loading="lazy">
+								<img src="assets/img/kopiering.jpg" width="400" height="300" alt="Nyckelkopiering och bilnycklar i Upplands Väsby" loading="lazy">
 							</div>
 							<div class="service-info">
 								<h3>Nyckelservice & Bilnycklar</h3>
@@ -247,13 +251,13 @@
 								<p>Vi erbjuder professionell kemtvätt och mattvätt i samarbete med de bästa tvätterierna. Lämna in din kostym, brudklänning eller dina skjortor för en skonsam och effektiv rengöring. Vi tar även emot alla typer av mattor, inklusive persiska mattor, ryamattor och trasmattor. Vi garanterar ett rent resultat med fokus på att bevara materialets kvalitet och lyster.</p>
 							</div>
 							<div class="service-image">
-								<img src="assets/img/kemtvatt.jpg" alt="Kemtvätt och mattvätt för kunder i Upplands Väsby och Rosersberg" loading="lazy">
+								<img src="assets/img/kemtvatt.jpg" width="400" height="300" alt="Kemtvätt och mattvätt för kunder i Upplands Väsby och Rosersberg" loading="lazy">
 							</div>
 						</div>
 						<!-- Gravering -->
 						<div class="service-card reveal">
 							<div class="service-image">
-								<img src="assets/img/gravering.jpg" alt="Gravering på skyltar och presenter i Väsby" loading="lazy">
+								<img src="assets/img/gravering.jpg" width="400" height="300" alt="Gravering på skyltar och presenter i Väsby" loading="lazy">
 							</div>
 							<div class="service-info">
 								<h3>Gravering & Skyltar</h3>
@@ -267,7 +271,7 @@
 								<p>Vässa dina verktyg hos oss! Vi erbjuder professionell slipning av köksknivar, saxar och verktyg. Under vintersäsongen är vi det självklara valet för slipning av skridskor och långfärdsskridskor i Upplands Väsby. Med rätt skärpa blir både matlagningen och skridskoåkningen roligare och säkrare. Vi ser till att dina eggar får den perfekta vinkeln för optimalt resultat.</p>
 							</div>
 							<div class="service-image">
-								<img src="assets/img/ice-skates.jpg" alt="Slipning av skridskor och knivar i Upplands Väsby" loading="lazy">
+								<img src="assets/img/ice-skates.jpg" width="400" height="300" alt="Slipning av skridskor och knivar i Upplands Väsby" loading="lazy">
 							</div>
 						</div>
 					</div>
@@ -340,8 +344,7 @@
 								<i class="fas fa-clock"></i>
 								<div>
 									<p>Mån - Fre: 10:00 - 19:00</p>
-									<p>Lördag: 10:00 - 17:00</p>
-									<p>Söndag: Stängt</p>
+									<p>Lör - Sön: 11:00 - 18:00</p>
 								</div>
 							</div>
 							<div class="social-links">
@@ -385,6 +388,6 @@
 			</a>
 		</div>
 
-		<script src="js/main.js"></script>
+		<script src="js/main.js" defer></script>
 	</body>
 </html>

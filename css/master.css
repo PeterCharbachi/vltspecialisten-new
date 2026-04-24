@@ -42,7 +42,28 @@ a:focus:not(:focus-visible), button:focus:not(:focus-visible) {
     outline: none;
 }
 
-/* Base Styles */
+/* Global Links */
+a {
+    color: var(--accent-leather);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: #7A351D; /* En mörkare Cognac-ton vid hover */
+    text-decoration: underline;
+}
+
+/* Header links should keep their specific style */
+#primary-menu li a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+#primary-menu li a:hover {
+    color: var(--accent-leather);
+    text-decoration: none;
+}
 * {
     margin: 0;
     padding: 0;
@@ -464,7 +485,7 @@ p {
 
 /* Video Section */
 .video-section {
-    background-color: #2D2621;
+    background-color: #4c3f35;
     color: var(--white);
 }
 
@@ -477,7 +498,7 @@ p {
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 75.25%;
     height: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -609,6 +630,16 @@ p {
     .section { padding: 60px 0; }
     .heritage-grid { grid-template-columns: 1fr; gap: 40px; }
     .services-grid { grid-template-columns: 1fr; }
+    
+    /* Tvinga bild överst på tjänstekort i mobil */
+    .service-card {
+        display: flex;
+        flex-direction: column;
+    }
+    .service-image {
+        order: -1; /* Flyttar bilden till toppen oavsett HTML-ordning */
+    }
+
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     .mobile-sticky-bar { display: grid; }
     body { padding-bottom: 60px; }
