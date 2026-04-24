@@ -29,15 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle with Accessibility
     const toggleMenu = () => {
-        mobileMenuToggle.classList.toggle('active');
+        const isOpen = mobileMenuToggle.classList.toggle('active');
         mobileOverlay.classList.toggle('active');
-        document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+        
+        // WCAG: Update aria-expanded
+        mobileMenuToggle.setAttribute('aria-expanded', isOpen);
+        
+        document.body.style.overflow = isOpen ? 'hidden' : '';
     };
 
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', toggleMenu);
+        // Ensure initial aria state
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
     }
 
     // Close mobile menu on link click
@@ -63,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Observe all reveal types
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     revealElements.forEach(el => observer.observe(el));
 });

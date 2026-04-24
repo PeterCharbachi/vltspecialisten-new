@@ -22,14 +22,21 @@
 		<title>Väsby Läder & Textilspecialisten | Skomakare & Skrädderi i Upplands Väsby</title>
 		<meta
 			name="description"
-			content="Din lokala skomakare, skräddare och kemtvätt i Upplands Väsby centrum. Vi utför skoservice, nyckelkopiering, gravering och slipning med hantverksmässig kvalitet sedan 1980."
+			content="Din lokala skomakare, skräddare och kemtvätt i Upplands Väsby centrum. Professionell skoservice, nyckelkopiering och skrädderi med kvalitet sedan 1980."
 		/>
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1, viewport-fit=cover"
 		/>
 
-		<!-- Structured Data -->
+		<!-- Open Graph / Social Media -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://vltspecialisten.se/" />
+		<meta property="og:title" content="Väsby Läder & Textilspecialisten | Skomakare & Skrädderi" />
+		<meta property="og:description" content="Din expert på skoservice, skrädderi och nyckelkopiering i Väsby Centrum sedan 1980." />
+		<meta property="og:image" content="https://vltspecialisten.se/assets/img/HEM.jpg" />
+
+		<!-- Structured Data (LocalBusiness & FAQ) -->
 		<script type="application/ld+json">
 		{
 		  "@context": "https://schema.org",
@@ -51,6 +58,38 @@
 			"@type": "GeoCoordinates",
 			"latitude": 59.518279,
 			"longitude": 17.9137272
+		  },
+		  "openingHoursSpecification": [
+			{
+			  "@type": "OpeningHoursSpecification",
+			  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+			  "opens": "10:00",
+			  "closes": "19:00"
+			},
+			{
+			  "@type": "OpeningHoursSpecification",
+			  "dayOfWeek": "Saturday",
+			  "opens": "10:00",
+			  "closes": "17:00"
+			}
+		  ],
+		  "hasOfferCatalog": {
+			"@type": "OfferCatalog",
+			"name": "Tjänster",
+			"itemListElement": [
+			  {
+				"@type": "Offer",
+				"itemOffered": { "@type": "Service", "name": "Skoservice & Klackning" }
+			  },
+			  {
+				"@type": "Offer",
+				"itemOffered": { "@type": "Service", "name": "Skrädderi & Klädvård" }
+			  },
+			  {
+				"@type": "Offer",
+				"itemOffered": { "@type": "Service", "name": "Nyckelservice & Bilnycklar" }
+			  }
+			]
 		  }
 		}
 		</script>
@@ -77,6 +116,8 @@
 	</head>
 
 	<body>
+		<a href="#main-content" class="skip-link">Hoppa till innehåll</a>
+
 		<!-- Google Tag Manager (noscript) -->
 		<noscript
 			><iframe
@@ -129,7 +170,7 @@
 			</nav>
 		</div>
 
-		<main class="main-container">
+		<main id="main-content" class="main-container">
 			<!-- Hero -->
 			<section id="welcome" class="hero-section">
 				<div class="hero-content-wrapper">
@@ -143,7 +184,7 @@
 						</div>
 					</div>
 					<div class="hero-image">
-						<img src="assets/img/binding-black-close-up-436779-min.jpg" alt="Professionell skomakare i Upplands Väsby lagar läderskor och utför skoservice">
+						<img src="assets/img/binding-black-close-up-436779-min.jpg" width="600" height="800" alt="Professionell skomakare i Upplands Väsby lagar läderskor och utför skoservice">
 					</div>
 				</div>
 			</section>
