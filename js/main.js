@@ -7,19 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Smart Header - Hide on scroll down, show on scroll up
     let lastScrollTop = 0;
-    const headerHeight = header.offsetHeight;
+    const headerHeight = 80; // Fixed header height
 
     window.addEventListener('scroll', () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Header Scrolled Background Effect
+        // Background effect
         if (scrollTop > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
 
-        // Hide/Show Header logic
+        // Hide/Show logic
         if (scrollTop > lastScrollTop && scrollTop > headerHeight * 2) {
             // Scrolling Down
             header.style.transform = `translateY(-${headerHeight}px)`;
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.transform = 'translateY(0)';
         }
         
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
     // Mobile Menu Toggle
@@ -38,7 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
     };
 
-    mobileMenuToggle.addEventListener('click', toggleMenu);
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', toggleMenu);
+    }
 
     // Close mobile menu on link click
     mobileLinks.forEach(link => {
@@ -49,39 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Intersection Observer for Animations
+    // Intersection Observer for Scroll Animations
     const observerOptions = {
-        threshold: 0.1,
+        threshold: 0.15,
         rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-visible');
-                observer.unobserve(entry.target);
+                entry.target.classList.add('active');
             }
         });
     }, observerOptions);
 
-    // Add animation classes to sections
-    document.querySelectorAll('.section, .service-card, .heritage-visual').forEach(el => {
-        el.classList.add('fade-in-element');
-        observer.observe(el);
-    });
+    const revealElements = document.querySelectorAll('.reveal');
+    revealElements.forEach(el => observer.observe(el));
 });
-
-// Add dynamic CSS for animations
-const style = document.createElement('style');
-style.textContent = `
-    .fade-in-element {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .fade-in-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);
