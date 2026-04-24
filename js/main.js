@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Smart Header - Hide on scroll down, show on scroll up
     let lastScrollTop = 0;
-    const headerHeight = 80; // Fixed header height
+    const headerHeight = 80;
 
     window.addEventListener('scroll', () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -21,10 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Hide/Show logic
         if (scrollTop > lastScrollTop && scrollTop > headerHeight * 2) {
-            // Scrolling Down
             header.style.transform = `translateY(-${headerHeight}px)`;
         } else {
-            // Scrolling Up
             header.style.transform = 'translateY(0)';
         }
         
@@ -65,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal');
+    // Observe all reveal types
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     revealElements.forEach(el => observer.observe(el));
 });
